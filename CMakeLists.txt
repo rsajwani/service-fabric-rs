@@ -111,7 +111,8 @@ add_custom_command(TARGET build_rust_sample_echomain POST_BUILD
         -E copy_if_different ${_pkg_exe} ${_pkg_root}/EchoAppServicePackage/Code/echomain.exe # note the rename
 )
 
+add_subdirectory(crates/samples/kvstore)
+
 if(WIN32) #linux is not tested
     add_subdirectory(crates/samples/echo2)
-    add_subdirectory(crates/samples/kvstore)
 endif(WIN32)
